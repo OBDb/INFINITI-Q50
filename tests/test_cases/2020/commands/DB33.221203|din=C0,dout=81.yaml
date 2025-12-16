@@ -2,4 +2,7 @@ command_id: DB33.221203|din=C0,dout=81
 test_cases:
 - expected_values:
     NI_MIL_DIST: 0
+  response: '7E8 05 62 12 03 00 00 '
+- expected_values:
+    NI_MIL_DIST: 0
   response: '7E8056212030000'
