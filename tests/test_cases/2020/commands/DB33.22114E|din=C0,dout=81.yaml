@@ -13,6 +13,18 @@ test_cases:
     NI_AFRATB1S1: 28.23529
   response: 7E80462114E48
 - expected_values:
+    NI_AFRATB1S1: 28.62745
+  response: 7E80462114E49
+- expected_values:
+    NI_AFRATB1S1: 29.01961
+  response: 7E80462114E4A
+- expected_values:
+    NI_AFRATB1S1: 29.41176
+  response: 7E80462114E4B
+- expected_values:
+    NI_AFRATB1S1: 30.19608
+  response: 7E80462114E4D
+- expected_values:
     NI_AFRATB1S1: 30.98039
   response: 7E80462114E4F
 - expected_values:
