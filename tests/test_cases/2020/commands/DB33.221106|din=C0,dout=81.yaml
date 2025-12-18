@@ -12,3 +12,12 @@ test_cases:
 - expected_values:
     NI_IAT: 37
   response: '7E80462110657'
+- expected_values:
+    NI_IAT: 40
+  response: 7E8046211065A
+- expected_values:
+    NI_IAT: 41
+  response: 7E8046211065B
+- expected_values:
+    NI_IAT: 42
+  response: 7E8046211065C
