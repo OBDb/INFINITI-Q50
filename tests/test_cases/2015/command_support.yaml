@@ -71,7 +71,9 @@ supported_commands_by_ecu:
   - 7E0.7E8.221110|din=C0,dout=81:NI_EVAP_PCT
   - 7E0.7E8.221111|din=C0,dout=81:NI_FUEL_T2
   - 7E0.7E8.22111A|din=C0,dout=81:NI_O2S12
+  - 7E0.7E8.22111F
   - 7E0.7E8.22111F|din=C0,dout=81:NI_EOT
+  - 7E0.7E8.221123
   - 7E0.7E8.221123|din=C0,dout=81:NI_STFT1
   - 7E0.7E8.221125|din=C0,dout=81:NI_LTFT1
   - 7E0.7E8.22112D|din=C0,dout=81:NI_SPARKADV_CORR
