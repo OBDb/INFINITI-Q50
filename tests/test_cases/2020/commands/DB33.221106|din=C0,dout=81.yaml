@@ -21,3 +21,9 @@ test_cases:
 - expected_values:
     NI_IAT: 42
   response: 7E8046211065C
+- expected_values:
+    NI_IAT: 44
+  response: 7E8046211065E
+- expected_values:
+    NI_IAT: 45
+  response: 7E8046211065F
