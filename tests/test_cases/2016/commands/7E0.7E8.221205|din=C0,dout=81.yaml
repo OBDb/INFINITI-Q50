@@ -1,0 +1,5 @@
+command_id: 7E0.7E8.221205|din=C0,dout=81
+test_cases:
+- expected_values:
+    INFINITI_MAF_V_B2: 0
+  response: '7E8056212050000'
