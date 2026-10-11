@@ -1,4 +1,302 @@
 { "commands": [
-
+{ "hdr": "707", "rax": "727", "dbg": true, "cmd": {"22": "0103"}, "freq": 0.1,
+  "signals": [
+    {"id": "Q50_TURN_SIGNAL_RIGHT", "path": "Control", "fmt": {          "len": 1, "max": 1, "unit": "offon" }, "name": "Right turn signal"},
+    {"id": "Q50_TURN_SIGNAL_LEFT",  "path": "Control", "fmt": {"bix": 1, "len": 1, "max": 1, "unit": "offon" }, "name": "Left turn signal"}
+  ]},
+{ "hdr": "740", "rax": "760", "dbg": true, "cmd": {"22": "1115"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_APP", "path": "Control", "fmt": { "len": 8, "max": 127.5, "div": 2, "unit": "percent" }, "name": "Accelerator pedal position"}
+  ]},
+{ "hdr": "740", "rax": "760", "fcm1": true, "dbg": true, "cmd": {"22": "1208"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_ABS_STEER_ANG", "path": "Control", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "degrees" }, "name": "Anti-lock brake steering angle"}
+  ]},
+{ "hdr": "740", "rax": "760", "dbg": true, "cmd": {"22": "1209"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_BRAKE_MC_P", "path": "Control", "fmt": { "len": 16, "max": 42666.015, "div": 1.536, "unit": "unknown" }, "name": "Brake master cylinder pressure"}
+  ]},
+{ "hdr": "743", "rax": "763", "fcm1": true, "cmd": {"21": "01"}, "freq": 30, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "Q50_MTR_ODO", "path": "Trips", "fmt": {"bix": 56, "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer, meter group 1", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "743", "rax": "763", "fcm1": true, "dbg": true, "cmd": {"22": "0E01"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_ODO", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "miles" }, "name": "Odometer", "suggestedMetric": "odometer"}
+  ]},
+{ "hdr": "743", "rax": "763", "fcm1": true, "dbg": true, "cmd": {"22": "0E25"}, "freq": 15,
+  "signals": [
+    {"id": "Q50_TP_FR_743", "path": "Tires", "fmt": { "len": 8, "max": 63.75, "div": 4, "nullmin": 0, "unit": "psi" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"}
+  ]},
+{ "hdr": "743", "rax": "763", "fcm1": true, "dbg": true, "cmd": {"22": "0E26"}, "freq": 15,
+  "signals": [
+    {"id": "Q50_TP_FL_743", "path": "Tires", "fmt": { "len": 8, "max": 63.75, "div": 4, "nullmin": 0, "unit": "psi" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"}
+  ]},
+{ "hdr": "743", "rax": "763", "fcm1": true, "dbg": true, "cmd": {"22": "0E27"}, "freq": 15,
+  "signals": [
+    {"id": "Q50_TP_RR_743", "path": "Tires", "fmt": { "len": 8, "max": 63.75, "div": 4, "nullmin": 0, "unit": "psi" }, "name": "Rear right tire pressure", "suggestedMetric": "rearRightTirePressure"}
+  ]},
+{ "hdr": "743", "rax": "763", "fcm1": true, "dbg": true, "cmd": {"22": "0E28"}, "freq": 15,
+  "signals": [
+    {"id": "Q50_TP_RL_743", "path": "Tires", "fmt": { "len": 8, "max": 63.75, "div": 4, "nullmin": 0, "unit": "psi" }, "name": "Rear left tire pressure", "suggestedMetric": "rearLeftTirePressure"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1124"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_AF_ADJ_B2", "path": "Fuel", "fmt": { "len": 8, "max": 155, "min": -100, "add": -100, "unit": "percent" }, "name": "Air/fuel ratio adjustment, bank 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "112A"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_MANIFOLD_P_SENS_V", "path": "Battery", "fmt": { "len": 8, "max": 5.1, "div": 50, "unit": "volts" }, "name": "Manifold pressure sensor voltage"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1137"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_CAM_ADV_B2", "path": "Engine", "fmt": { "len": 8, "max": 63.5, "min": -64, "div": 2, "add": -64, "unit": "degrees" }, "name": "Intake camshaft advance, bank 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1139"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_CAM_DUTY_B2", "path": "Engine", "fmt": { "len": 8, "max": 99.6, "mul": 25, "div": 64, "unit": "percent" }, "name": "Intake valve timing solenoid duty, bank 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "din": "C0", "dout": "81", "cmd": {"22": "1205"}, "freq": 1, "dbgfilter": { "to": 2015, "years": [2017, 2018, 2019], "from": 2021 },
+  "signals": [
+    {"id": "Q50_MAF_V_B2", "path": "Engine", "fmt": { "len": 16, "max": 327, "div": 200, "unit": "volts" }, "name": "Mass air flow sensor voltage, bank 2"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1223"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_REFRIGERANT_FLUID_V", "path": "Battery", "fmt": { "len": 16, "max": 327, "div": 200, "unit": "volts" }, "name": "Refrigerant fluid sensor voltage"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "1225"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_UP_OXYGEN_SENS_V", "path": "Battery", "fmt": { "len": 16, "max": 327, "div": 200, "unit": "volts" }, "name": "Upstream oxygen sensor voltage"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "cmd": {"22": "122B"}, "freq": 30, "dbgfilter": { "to": 2015, "years": [2017, 2018, 2019, 2023] },
+  "signals": [
+    {"id": "Q50_CC_S", "path": "Cruise control", "fmt": { "len": 16, "max": 3686, "mul": 9, "div": 160, "unit": "kilometersPerHour" }, "name": "Cruise control set speed"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1307"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_AC_COMP",        "path": "Engine", "fmt": {"bix": 1, "len": 1, "max": 1, "unit": "offon" }, "name": "Air conditioning compressor"},
+    {"id": "Q50_IDLE_CTRL_MODE", "path": "Engine", "fmt": {"bix": 6, "len": 1, "max": 1, "unit": "offon" }, "name": "Idle control mode"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "130D"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_BRAKE_SWITCH_NUMBER_2", "path": "Control", "fmt": {"bix": 2, "len": 1, "max": 1, "unit": "offon" }, "name": "BRAKE SWITCH, number 2"},
+    {"id": "Q50_BRAKE_SWITCH_NUMBER_1", "path": "Control", "fmt": {"bix": 3, "len": 1, "max": 1, "unit": "offon" }, "name": "BRAKE SWITCH, number 1"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1313"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_COOLING_FAN_LOW",  "path": "Engine", "fmt": {"bix": 5, "len": 1, "max": 1, "unit": "offon" }, "name": "Cooling fan low"},
+    {"id": "Q50_COOLING_FAN_HIGH", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Cooling fan high"}
+  ]},
+{ "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2095"}, "freq": 5,
+  "signals": [
+    {"id": "Q50_EOT", "path": "Engine", "fmt": { "len": 8, "max": 143, "min": -48, "mul": 3, "div": 4, "add": -48, "unit": "celsius" }, "name": "Engine oil temperature"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "cmd": {"21": "01"}, "freq": 5, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "Q50_OUTPUT_SPD",   "path": "Movement",     "fmt": {"bix": 40,  "len": 16, "max": 65535,                                                              "unit": "rpm"        }, "name": "Output speed"},
+    {"id": "Q50_TURBINE_SPD",  "path": "Movement",     "fmt": {"bix": 56,  "len": 16, "max": 65535,                                                              "unit": "rpm"        }, "name": "Turbine speed"},
+    {"id": "Q50_TQ_CONV_SLIP", "path": "Transmission", "fmt": {"bix": 120, "len": 16, "max": 32767, "min": -32768,                                 "sign": true, "unit": "rpm"        }, "name": "Torque converter slip"},
+    {"id": "Q50_ATF_T_VAR_1",  "path": "Transmission", "fmt": {"bix": 152, "len": 8,  "max": 392,   "min": -67,    "mul": 9, "div": 5, "add": -67,               "unit": "fahrenheit" }, "name": "Transmission fluid temperature, variant 1"},
+    {"id": "Q50_ATF_T_VAR_2",  "path": "Transmission", "fmt": {"bix": 160, "len": 8,  "max": 392,   "min": -67,    "mul": 9, "div": 5, "add": -67,               "unit": "fahrenheit" }, "name": "Transmission fluid temperature, variant 2"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"21": "03"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TRANS_ATF", "path": "Transmission", "fmt": { "len": 32, "max": 4294967295, "unit": "scalar" }, "name": "Transmission ATF deterioration date"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"21": "10"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TRANS_B",                   "path": "Transmission", "fmt": {            "len": 16, "max": 65535,           "unit": "scalar" }, "name": "Transmission-B"},
+    {"id": "Q50_TRANS_WORK_HOURS",          "path": "Transmission", "fmt": {"bix": 32,  "len": 16, "max": 10922, "div": 6, "unit": "hours"  }, "name": "Transmission work hours"},
+    {"id": "Q50_TRANS",                     "path": "Transmission", "fmt": {"bix": 64,  "len": 8,  "max": 255,             "unit": "scalar" }, "name": "Transmission-A"},
+    {"id": "Q50_TRANS_WORK_HOURS_WARM_ENG", "path": "Transmission", "fmt": {"bix": 192, "len": 16, "max": 10922, "div": 6, "unit": "hours"  }, "name": "Transmission work hours warm engine"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"21": "30"}, "freq": 5,
+  "signals": [
+    {"id": "Q50_ATF_T_VAR_2_7E1", "path": "Transmission", "fmt": {"bix": 88, "len": 8, "max": 401, "min": -58, "mul": 9, "div": 5, "add": -58, "unit": "fahrenheit" }, "name": "Transmission fluid temperature, variant 2"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "0230"}, "freq": 5,
+  "signals": [
+    {"id": "Q50_ATF_T_VAR_1_7E1", "path": "Transmission", "fmt": {"bix": 88, "len": 8, "max": 401, "min": -58, "mul": 9, "div": 5, "add": -58, "unit": "fahrenheit" }, "name": "Transmission fluid temperature, variant 1"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1101"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_VSS_SENS", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed sensor"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1102"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_VSS_EST", "path": "Transmission", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Estimated vehicle speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1103"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_VSS", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "110C"}, "freq": 5,
+  "signals": [
+    {"id": "Q50_TCM_ATF_T", "path": "Transmission", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Transmission fluid temperature", "suggestedMetric": "transmissionFluidTemperature"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "110D"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_LUBE_P", "path": "Transmission", "fmt": { "len": 8, "max": 1270, "min": -1280, "mul": 10, "sign": true, "unit": "kilopascal" }, "name": "Lubrication pressure"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "110E"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_LINE_P", "path": "Transmission", "fmt": { "len": 8, "max": 6375, "mul": 25, "unit": "kilopascal" }, "name": "Line pressure"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "110F"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_PRI_P_TGT", "path": "Transmission", "fmt": { "len": 8, "max": 6375, "mul": 25, "unit": "kilopascal" }, "name": "Target primary pulley pressure"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1110"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_SEL_P_TGT", "path": "Transmission", "fmt": { "len": 8, "max": 6375, "mul": 25, "unit": "kilopascal" }, "name": "Target select pressure"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1111"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_SEC_P_TGT", "path": "Transmission", "fmt": { "len": 8, "max": 6375, "mul": 25, "unit": "kilopascal" }, "name": "Target secondary pulley pressure"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1112"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_REQ_TQ_D", "path": "Transmission", "fmt": { "len": 8, "max": 354, "min": -156, "mul": 2, "add": 100, "sign": true, "unit": "newtonMeters" }, "name": "Requested torque delta"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1113"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_REQ_TQ", "path": "Transmission", "fmt": { "len": 8, "max": 354, "min": -156, "mul": 2, "add": 100, "sign": true, "unit": "newtonMeters" }, "name": "Requested torque"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1114"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_REQ_RPM", "path": "Transmission", "fmt": { "len": 8, "max": 12750, "mul": 50, "unit": "rpm" }, "name": "Requested engine speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1201"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_INPUT_RPM", "path": "Movement", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Input speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1202"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_PRI_RPM", "path": "Movement", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Primary pulley speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1203"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_SEC_RPM", "path": "Movement", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Secondary pulley speed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1204"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_RPM", "path": "Movement", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Engine speed", "suggestedMetric": "engineSpeed"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1205"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_SEC_P_V", "path": "Transmission", "fmt": { "len": 16, "max": 320, "mul": 5, "div": 1023, "unit": "volts" }, "name": "Secondary pressure sensor voltage"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1206"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_PRI_P_V", "path": "Transmission", "fmt": { "len": 16, "max": 320, "mul": 5, "div": 1023, "unit": "volts" }, "name": "Primary pressure sensor voltage"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "cmd": {"22": "1207"}, "freq": 5, "dbgfilter": { "to": 2019, "from": 2021 },
+  "signals": [
+    {"id": "Q50_TCM_ATF_T_V", "path": "Transmission", "fmt": { "len": 16, "max": 320, "mul": 5, "div": 1023, "unit": "volts" }, "name": "Fluid temperature sensor voltage"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1208"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_G_V", "path": "Transmission", "fmt": { "len": 16, "max": 3.27, "min": -3.27, "div": 10000, "sign": true, "unit": "volts" }, "name": "Acceleration sensor voltage"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "120C"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_INPUT_RPM_2", "path": "Transmission", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Input speed, alternate"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "120D"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_PRI_RPM_2", "path": "Movement", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Primary pulley speed, alternate"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "120E"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_SEC_RPM_2", "path": "Movement", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Secondary pulley speed, alternate"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "120F"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_RPM_2", "path": "Movement", "fmt": { "len": 16, "max": 65535, "unit": "rpm" }, "name": "Engine speed, alternate"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1210"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_PULLEY_RAT", "path": "Transmission", "fmt": { "len": 16, "max": 6.55, "div": 10000, "unit": "scalar" }, "name": "Pulley ratio"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1212"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_ENG_TQ_ACT", "path": "Transmission", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Engine torque, active"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1213"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_ENG_TQ_TX", "path": "Transmission", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Engine torque, transmitted"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1214"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_ENG_TQ", "path": "Transmission", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Engine torque"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1215"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_PRI_TQ", "path": "Transmission", "fmt": { "len": 16, "max": 3276, "min": -3276, "div": 10, "sign": true, "unit": "newtonMeters" }, "name": "Primary pulley torque"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1216"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_TCM_TQ_RAT", "path": "Transmission", "fmt": { "len": 16, "max": 236, "mul": 577, "div": 160000, "unit": "scalar" }, "name": "Torque ratio"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1218"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_PULLEY_RAT_TGT", "path": "Transmission", "fmt": { "len": 16, "max": 6.55, "div": 10000, "unit": "scalar" }, "name": "Target pulley ratio"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1219"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_ISO_1_C", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Isolation solenoid 1 current"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "121A"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_ISO_2_C", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Isolation solenoid 2 current"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "121B"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_PRI_SOL_C", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Primary solenoid current"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "121C"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_SEC_SOL_C", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Secondary solenoid current"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "121D"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_SEL_SOL_C", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Select solenoid current"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "121E"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_SOL_MON_1", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Solenoid 1 monitor current"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "121F"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_SOL_MON_2", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Solenoid 2 monitor current"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1221"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_PRI_SOL_MON", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Primary solenoid monitor current"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1222"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_SEC_SOL_MON", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Secondary solenoid monitor current"}
+  ]},
+{ "hdr": "7E1", "rax": "7E9", "din": "C0", "dout": "81", "dbg": true, "cmd": {"22": "1223"}, "freq": 1,
+  "signals": [
+    {"id": "Q50_TCM_SEL_SOL_MON", "path": "Transmission", "fmt": { "len": 8, "max": 0.255, "div": 1000, "unit": "amps" }, "name": "Select solenoid monitor current"}
+  ]},
+{ "hdr": "DA2D", "rax": "2D", "dbg": true, "cmd": {"22": "4B00"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_FL_WHL_SPD", "path": "Tires", "fmt": { "len": 16, "max": 655, "div": 100, "unit": "kilometersPerHour" }, "name": "Front left wheel speed"}
+  ]},
+{ "hdr": "DA2D", "rax": "2D", "dbg": true, "cmd": {"22": "4B01"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_FR_WHL_SPD", "path": "Tires", "fmt": { "len": 16, "max": 655, "div": 100, "unit": "kilometersPerHour" }, "name": "Front right wheel speed"}
+  ]},
+{ "hdr": "DA2D", "rax": "2D", "dbg": true, "cmd": {"22": "4B02"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_RL_WHL_SPD", "path": "Tires", "fmt": { "len": 16, "max": 655, "div": 100, "unit": "kilometersPerHour" }, "name": "Rear left wheel speed"}
+  ]},
+{ "hdr": "DA2D", "rax": "2D", "dbg": true, "cmd": {"22": "4B03"}, "freq": 0.25,
+  "signals": [
+    {"id": "Q50_RR_WHL_SPD", "path": "Tires", "fmt": { "len": 16, "max": 655, "div": 100, "unit": "kilometersPerHour" }, "name": "Rear right wheel speed"}
+  ]}
 ]
 }
